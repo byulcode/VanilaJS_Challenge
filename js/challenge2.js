@@ -1,22 +1,24 @@
 //코드 챌린지 2번
-const h1 = document.querySelector("body");
+const body = document.body;
+document.getElementsByTagName()
+document.querySelectorAll
 
-function handleResize() {
+const handleResize = function(event) {
     const intViewportWidth = window.innerWidth;
     const firstClass = "first";
     const secondClass = "second";
     const thirdClass = "third";
 
     if(intViewportWidth < 600) {
-        h1.classList.add(firstClass);
-        h1.classList.remove(secondClass, thirdClass);
+        body.classList.add(firstClass);
+        body.classList.remove(secondClass, thirdClass);
     }
     else if (intViewportWidth < 1000) {
-        h1.classList.add(secondClass);
-        h1.classList.remove(firstClass,thirdClass);
+        body.classList.add(secondClass);
+        body.classList.remove(firstClass,thirdClass);
     }else {
-        h1.classList.add(thirdClass);
-        h1.classList.remove(firstClass,secondClass);
+        body.classList.add(thirdClass);
+        body.classList.remove(firstClass,secondClass);
     }
 }
 

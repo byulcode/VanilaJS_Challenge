@@ -5,11 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/ch2.css">
+
 </head>
 <body>
-    <h1>Hello!</h1>
+    <h1>Random Number Game!</h1>
+    <form id="input_num">
+        <span>Generate a number between 0 and</span>
+        <input type="number" min="1" required/>
+    </form>
+    <h2 id="c1"></h2>
+    
+    <form id="guess_num">
+        <span>Guess the number : </span>
+        <input type="number" min="1" required/>
+        <button type="button" onclick="buttonClick()">Play!</button>
+    </form>
+    <span id="c2"></span>
+    <h2 id="c3"></h2>
 
-    <script src="js/challenge2.js"></script>
+    <script src="js/challenge3.js"></script>
 </body>
 </html>
