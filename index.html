@@ -9,19 +9,21 @@
 </head>
 <body>
     <h1>Random Number Game!</h1>
-    <form id="input_num">
-        <span>Generate a number between 0 and</span>
-        <input type="number" min="1" required/>
+    <form>
+        <h2>
+            Generate a number between 0 and <input type="number" 
+            min="1" id="range" required/>
+        </h2>
+        
+        <p>
+            Guess the number : <input type="number" min="1" id="guess_num" required/>
+            <input type="submit" id="submit" value="Play!">
+        </p>
+        
     </form>
-    <h2 id="c1"></h2>
-    
-    <form id="guess_num">
-        <span>Guess the number : </span>
-        <input type="number" min="1" required/>
-        <button type="button" onclick="buttonClick()">Play!</button>
-    </form>
-    <span id="c2"></span>
-    <h2 id="c3"></h2>
+
+    <span id="show"></span>
+    <h3 id="result"></h3>
 
     <script src="js/challenge3.js"></script>
 </body>
