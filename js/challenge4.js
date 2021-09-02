@@ -1,23 +1,20 @@
-const input_num = document.querySelector("#input_num input"); //사용자가 지정한 범위
-const guess_num = document.querySelector("#guess_num input");
-const h2 = document.getElementById("c1");
-const h22 = document.getElementById("c2");
-const HIDDEN_CLASSNAME = "hidden";
 
+const time_left = document.querySelector("h2#day_left");
 
+function getTime() {
+  const date = new Date();
+  const xmas = new Date("2021-12-25:00:00:00"); //한국 시간 기준
 
+  //남은 시간(밀리초)
+  const secondleft = xmas - date;
 
-function updateValue(e){//값 실시간으로 업데이트 해주는 함수
-    e.preventDefault();
+  const seconds = Math.floor(secondleft / 1000) % 60;
+  const minutes = Math.floor(secondleft / 1000 / 60) % 60;
+  const hours = Math.floor(secondleft / 1000 / 60 / 60) % 24;
+  const day = Math.floor(secondleft / 1000 / 60 / 60 / 24);
 
-   const max = e.target.value;
-   h2.innerText = max;
-   
-   const random_number = Math.ceil(Math.random() * max);
-   h22.innerHTML = `You chose${random_number}`;
+  time_left.innerText = `${day}d ${hours}h ${minutes}m ${seconds}s`;
 }
 
-
-input_num.addEventListener('change', updateValue);
-
-
+getTime(); //웹사이트 열자마자 시간이 뜨도록
+setInterval(getTime, 1000);
